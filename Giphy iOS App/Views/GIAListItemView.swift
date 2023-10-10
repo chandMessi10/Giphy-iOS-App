@@ -8,7 +8,7 @@
 import SwiftUI
 import Giffy
 
-struct GridItemView: View {
+struct GIAListItemView: View {
     let gifURL: URL // URL of the GIF image
     
     @State private var isLiked = false
@@ -51,6 +51,6 @@ struct GridItemView: View {
 
 struct GridItemView_Previews: PreviewProvider {
     static var previews: some View {
-        GridItemView(gifURL: URL(string: "https://media.giphy.com/media/jHXYSO115NBLLyc9wY/giphy.gif")!)
+        GIAListItemView(gifURL: URL(string: "https://media.giphy.com/media/jHXYSO115NBLLyc9wY/giphy.gif")!)
     }
 }

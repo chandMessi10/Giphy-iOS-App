@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavouriteGifsView: View {
+struct GIAFavouriteGifsView: View {
     
     let columns = [
         GridItem(.flexible(), spacing: 16),
@@ -19,7 +19,7 @@ struct FavouriteGifsView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(0..<10) { index in
-                        GridItemView(gifURL: URL(string: "https://media.giphy.com/media/jHXYSO115NBLLyc9wY/giphy.gif")!)
+                        GIAListItemView(gifURL: URL(string: "https://media.giphy.com/media/jHXYSO115NBLLyc9wY/giphy.gif")!)
                             .frame(height: 180)
                     }
                 }
@@ -31,6 +31,6 @@ struct FavouriteGifsView: View {
 
 struct FavouriteGifs_Previews: PreviewProvider {
     static var previews: some View {
-        FavouriteGifsView()
+        GIAFavouriteGifsView()
     }
 }

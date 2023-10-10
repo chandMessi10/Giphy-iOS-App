@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct GIAHomeTabView: View {
     var body: some View {
         TabView {
-            TrendingGifsView()
+            GIATrendingGifsView()
                 .tabItem {
                     Label("Trending", systemImage: "flame.fill")
                 }
-            FavouriteGifsView()
+            GIAFavouriteGifsView()
                 .tabItem {
                     Label("Favourite", systemImage: "heart.fill")
                 }
@@ -23,5 +23,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    GIAHomeTabView()
 }
