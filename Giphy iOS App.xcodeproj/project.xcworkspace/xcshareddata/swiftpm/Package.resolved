@@ -28,6 +28,24 @@
       }
     },
     {
+      "identity" : "simpletoast",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sanzaru/SimpleToast.git",
+      "state" : {
+        "revision" : "6637b95dfc49d3d688ad2d7b6e0655c0f6862f83",
+        "version" : "0.8.0"
+      }
+    },
+    {
+      "identity" : "swiftuix",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftUIX/SwiftUIX",
+      "state" : {
+        "revision" : "5d472e5797d377af3d65c711af60277c7a753663",
+        "version" : "0.1.7"
+      }
+    },
+    {
       "identity" : "url-image",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/dmytro-anokhin/url-image",

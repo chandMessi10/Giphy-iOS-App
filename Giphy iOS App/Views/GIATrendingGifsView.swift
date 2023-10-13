@@ -6,28 +6,48 @@
 //
 
 import SwiftUI
+import SimpleToast
 
 struct GIATrendingGifsView: View {
     @State private var searchText: String = ""
     @StateObject var viewModel: GIATrendingGIFsViewModel
+    @State var showToast: Bool = false
     
     init() {
         self._viewModel = StateObject(wrappedValue: GIATrendingGIFsViewModel())
     }
     
+    private let toastOptions = SimpleToastOptions(
+        alignment: .bottom,
+        hideAfter: 5,
+        modifierType: .skew
+    )
+    
     var body: some View {
         NavigationView {
-            List(0..<10, id: \.self) { index in
-                GIAListItemView(gifURL: URL(string: "https://media.giphy.com/media/jHXYSO115NBLLyc9wY/giphy.gif")!)
-                    .frame(height: 200)
-                    .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
+            VStack {
+                if viewModel.isLoading {
+                    ProgressView("Loading...")
+                } else if !viewModel.errorMessage.isEmpty {
+                    Text(viewModel.errorMessage)
+                }
+                else {
+                    List(0..<10, id: \.self) { index in
+                        GIAListItemView(gifURL: URL(string: "https://media.giphy.com/media/jHXYSO115NBLLyc9wY/giphy.gif")!)
+                            .frame(height: 200)
+                            .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
+                    }
+                    .listStyle(PlainListStyle())
+                    .navigationTitle("Trending GIFs")
+                }
             }
-            .listStyle(PlainListStyle())
-            .navigationTitle("Trending GIFs")
             .toolbar {
                 Button {
                     // Show Search Gifs Sheet
                     viewModel.showingSearchGIFView = true
+//                    withAnimation {
+//                        showToast.toggle()
+//                    }
                 } label: {
                     Image(systemName: "magnifyingglass")
                         .tint(.secondary).font(.system(size: 18))
@@ -37,6 +57,15 @@ struct GIATrendingGifsView: View {
                     text: "",
                     searchGIFViewPresented: $viewModel.showingSearchGIFView
                 )
+            }.refreshable {
+                viewModel.fetchTrendingGIFs()
+            }.simpleToast(isPresented: $showToast, options: toastOptions) {
+                Label("GIF favourited", systemImage: "heart.fill")
+                .padding()
+                .background(Color.white)
+                .foregroundColor(Color.gray)
+                .cornerRadius(10)
+                .padding(.top)
             }
         }
     }
