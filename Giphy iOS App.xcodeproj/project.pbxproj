@@ -13,18 +13,24 @@
 		EC9640AE2AD5A73900CB9716 /* GIASearchGIFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9640AD2AD5A73900CB9716 /* GIASearchGIFView.swift */; };
 		EC9640B12AD5B9AF00CB9716 /* GIATrendingGIFsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9640B02AD5B9AE00CB9716 /* GIATrendingGIFsViewModel.swift */; };
 		EC9640B32AD5C2A500CB9716 /* GIASearchViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9640B22AD5C2A500CB9716 /* GIASearchViewViewModel.swift */; };
+		EC9703E32ADD154200E6366F /* GIAFavouriteGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9703E22ADD154200E6366F /* GIAFavouriteGIF.swift */; };
+		EC9703E62ADD187D00E6366F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EC9703E52ADD187D00E6366F /* Lottie */; };
+		EC9703E82ADD196E00E6366F /* empty_fav_gifs.json in Resources */ = {isa = PBXBuildFile; fileRef = EC9703E72ADD196D00E6366F /* empty_fav_gifs.json */; };
+		EC9703EA2ADD19A700E6366F /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9703E92ADD19A700E6366F /* LottieView.swift */; };
 		EC9AF73F2AD3DB5900D67FA2 /* Giphy_iOS_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AF73E2AD3DB5900D67FA2 /* Giphy_iOS_AppApp.swift */; };
 		EC9AF7412AD3DB5900D67FA2 /* GIAHomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AF7402AD3DB5900D67FA2 /* GIAHomeTabView.swift */; };
 		EC9AF7432AD3DB5A00D67FA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9AF7422AD3DB5A00D67FA2 /* Assets.xcassets */; };
 		EC9AF7462AD3DB5A00D67FA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC9AF7452AD3DB5A00D67FA2 /* Preview Assets.xcassets */; };
 		EC9AF74F2AD3DC7F00D67FA2 /* GIATrendingGifsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AF74E2AD3DC7F00D67FA2 /* GIATrendingGifsView.swift */; };
 		EC9AF7512AD3DC8A00D67FA2 /* GIAFavouriteGifsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AF7502AD3DC8A00D67FA2 /* GIAFavouriteGifsView.swift */; };
-		EC9BA6BD2AD530F100299988 /* GIAListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9BA6BC2AD530F100299988 /* GIAListItemView.swift */; };
+		EC9BA6BD2AD530F100299988 /* GIAGIFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9BA6BC2AD530F100299988 /* GIAGIFView.swift */; };
 		ECA87DC92AD7209E0087A8D2 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA87DC82AD7209E0087A8D2 /* OnboardView.swift */; };
 		ECBF56C42AD452C900A65CF1 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = ECBF56C32AD452C900A65CF1 /* URLImage */; };
 		ECBF56C62AD452C900A65CF1 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = ECBF56C52AD452C900A65CF1 /* URLImageStore */; };
 		ECC7F9EE2AD46B0400370D14 /* Giffy in Frameworks */ = {isa = PBXBuildFile; productRef = ECC7F9ED2AD46B0400370D14 /* Giffy */; };
 		ECE5CEEC2AD99B38008C6DB2 /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = ECE5CEEB2AD99B38008C6DB2 /* SimpleToast */; };
+		ECE5CEEF2AD9CAF8008C6DB2 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = ECE5CEEE2AD9CAF8008C6DB2 /* Realm */; };
+		ECE5CEF12AD9CAF8008C6DB2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ECE5CEF02AD9CAF8008C6DB2 /* RealmSwift */; };
 		ECEDEBF72AD685B400925572 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = ECEDEBF62AD685B400925572 /* SwiftUIX */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +40,9 @@
 		EC9640AD2AD5A73900CB9716 /* GIASearchGIFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIASearchGIFView.swift; sourceTree = "<group>"; };
 		EC9640B02AD5B9AE00CB9716 /* GIATrendingGIFsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIATrendingGIFsViewModel.swift; sourceTree = "<group>"; };
 		EC9640B22AD5C2A500CB9716 /* GIASearchViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIASearchViewViewModel.swift; sourceTree = "<group>"; };
+		EC9703E22ADD154200E6366F /* GIAFavouriteGIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIAFavouriteGIF.swift; sourceTree = "<group>"; };
+		EC9703E72ADD196D00E6366F /* empty_fav_gifs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty_fav_gifs.json; sourceTree = "<group>"; };
+		EC9703E92ADD19A700E6366F /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		EC9AF73B2AD3DB5900D67FA2 /* Giphy iOS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Giphy iOS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9AF73E2AD3DB5900D67FA2 /* Giphy_iOS_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Giphy_iOS_AppApp.swift; sourceTree = "<group>"; };
 		EC9AF7402AD3DB5900D67FA2 /* GIAHomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIAHomeTabView.swift; sourceTree = "<group>"; };
@@ -41,7 +50,7 @@
 		EC9AF7452AD3DB5A00D67FA2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EC9AF74E2AD3DC7F00D67FA2 /* GIATrendingGifsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIATrendingGifsView.swift; sourceTree = "<group>"; };
 		EC9AF7502AD3DC8A00D67FA2 /* GIAFavouriteGifsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIAFavouriteGifsView.swift; sourceTree = "<group>"; };
-		EC9BA6BC2AD530F100299988 /* GIAListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIAListItemView.swift; sourceTree = "<group>"; };
+		EC9BA6BC2AD530F100299988 /* GIAGIFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIAGIFView.swift; sourceTree = "<group>"; };
 		ECA87DC82AD7209E0087A8D2 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECE5CEF12AD9CAF8008C6DB2 /* RealmSwift in Frameworks */,
+				ECE5CEEF2AD9CAF8008C6DB2 /* Realm in Frameworks */,
+				EC9703E62ADD187D00E6366F /* Lottie in Frameworks */,
 				ECC7F9EE2AD46B0400370D14 /* Giffy in Frameworks */,
 				EC9640AA2AD5A45800CB9716 /* Alamofire in Frameworks */,
 				ECBF56C62AD452C900A65CF1 /* URLImageStore in Frameworks */,
@@ -83,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				EC9640AB2AD5A6C500CB9716 /* User.swift */,
+				EC9703E22ADD154200E6366F /* GIAFavouriteGIF.swift */,
 			);
 			path = DataTypes;
 			sourceTree = "<group>";
@@ -146,7 +159,7 @@
 				EC9AF7402AD3DB5900D67FA2 /* GIAHomeTabView.swift */,
 				EC9AF74E2AD3DC7F00D67FA2 /* GIATrendingGifsView.swift */,
 				EC9AF7502AD3DC8A00D67FA2 /* GIAFavouriteGifsView.swift */,
-				EC9BA6BC2AD530F100299988 /* GIAListItemView.swift */,
+				EC9BA6BC2AD530F100299988 /* GIAGIFView.swift */,
 				EC9640AD2AD5A73900CB9716 /* GIASearchGIFView.swift */,
 				ECA87DC82AD7209E0087A8D2 /* OnboardView.swift */,
 			);
@@ -156,8 +169,10 @@
 		EC9AF74D2AD3DC5B00D67FA2 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				EC9703E72ADD196D00E6366F /* empty_fav_gifs.json */,
 				EC9AF7422AD3DB5A00D67FA2 /* Assets.xcassets */,
 				EC9AF73E2AD3DB5900D67FA2 /* Giphy_iOS_AppApp.swift */,
+				EC9703E92ADD19A700E6366F /* LottieView.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -185,6 +200,9 @@
 				EC9640A92AD5A45800CB9716 /* Alamofire */,
 				ECEDEBF62AD685B400925572 /* SwiftUIX */,
 				ECE5CEEB2AD99B38008C6DB2 /* SimpleToast */,
+				ECE5CEEE2AD9CAF8008C6DB2 /* Realm */,
+				ECE5CEF02AD9CAF8008C6DB2 /* RealmSwift */,
+				EC9703E52ADD187D00E6366F /* Lottie */,
 			);
 			productName = "Giphy iOS App";
 			productReference = EC9AF73B2AD3DB5900D67FA2 /* Giphy iOS App.app */;
@@ -220,6 +238,8 @@
 				EC9640A82AD5A45800CB9716 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				ECEDEBF52AD685B400925572 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 				ECE5CEEA2AD99B38008C6DB2 /* XCRemoteSwiftPackageReference "SimpleToast" */,
+				ECE5CEED2AD9CAF8008C6DB2 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				EC9703E42ADD187D00E6366F /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = EC9AF73C2AD3DB5900D67FA2 /* Products */;
 			projectDirPath = "";
@@ -235,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC9703E82ADD196E00E6366F /* empty_fav_gifs.json in Resources */,
 				EC9AF7462AD3DB5A00D67FA2 /* Preview Assets.xcassets in Resources */,
 				EC9AF7432AD3DB5A00D67FA2 /* Assets.xcassets in Resources */,
 			);
@@ -255,9 +276,11 @@
 				EC9640AC2AD5A6C500CB9716 /* User.swift in Sources */,
 				EC9AF7512AD3DC8A00D67FA2 /* GIAFavouriteGifsView.swift in Sources */,
 				EC9640B32AD5C2A500CB9716 /* GIASearchViewViewModel.swift in Sources */,
+				EC9703EA2ADD19A700E6366F /* LottieView.swift in Sources */,
+				EC9703E32ADD154200E6366F /* GIAFavouriteGIF.swift in Sources */,
 				EC9640B12AD5B9AF00CB9716 /* GIATrendingGIFsViewModel.swift in Sources */,
 				ECA87DC92AD7209E0087A8D2 /* OnboardView.swift in Sources */,
-				EC9BA6BD2AD530F100299988 /* GIAListItemView.swift in Sources */,
+				EC9BA6BD2AD530F100299988 /* GIAGIFView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +496,14 @@
 				minimumVersion = 5.8.0;
 			};
 		};
+		EC9703E42ADD187D00E6366F /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.3;
+			};
+		};
 		ECBF56C22AD452C900A65CF1 /* XCRemoteSwiftPackageReference "url-image" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
@@ -497,6 +528,14 @@
 				minimumVersion = 0.8.0;
 			};
 		};
+		ECE5CEED2AD9CAF8008C6DB2 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		ECEDEBF52AD685B400925572 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
@@ -512,6 +551,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EC9640A82AD5A45800CB9716 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		EC9703E52ADD187D00E6366F /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC9703E42ADD187D00E6366F /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 		ECBF56C32AD452C900A65CF1 /* URLImage */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -532,6 +576,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ECE5CEEA2AD99B38008C6DB2 /* XCRemoteSwiftPackageReference "SimpleToast" */;
 			productName = SimpleToast;
+		};
+		ECE5CEEE2AD9CAF8008C6DB2 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECE5CEED2AD9CAF8008C6DB2 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		ECE5CEF02AD9CAF8008C6DB2 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECE5CEED2AD9CAF8008C6DB2 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 		ECEDEBF62AD685B400925572 /* SwiftUIX */ = {
 			isa = XCSwiftPackageProductDependency;

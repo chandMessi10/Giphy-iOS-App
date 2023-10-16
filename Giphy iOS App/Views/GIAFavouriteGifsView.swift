@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct GIAFavouriteGifsView: View {
+    
+    @ObservedResults(GIAFavouriteGIF.self) var favouriteGifs
     
     let columns = [
         GridItem(.flexible(), spacing: 16),
@@ -16,14 +19,25 @@ struct GIAFavouriteGifsView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(0..<10) { index in
-                        GIAListItemView(gifURL: URL(string: "https://media.giphy.com/media/jHXYSO115NBLLyc9wY/giphy.gif")!)
-                            .frame(height: 180)
+            VStack {
+                if (favouriteGifs.isEmpty) {
+                    LottieView(loopMode: .loop)
+                        .scaleEffect(0.4)
+                } else {
+                    ScrollView {
+                        LazyVGrid(columns: columns, spacing: 16) {
+                            ForEach(favouriteGifs) { favGif in
+                                GIAGIFView(
+                                    gifIDValue: favGif.gifIDValue,
+                                    gifURL: URL(string: favGif.gifURL)!,
+                                    isLiked: true
+                                )
+                                .frame(height: 180)
+                            }
+                        }
+                        .padding(16)
                     }
                 }
-                .padding(16)
             }.navigationTitle("Favourite GIFs")
         }
     }

@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import RealmSwift
 import SimpleToast
 
 struct GIATrendingGifsView: View {
     @State private var searchText: String = ""
     @StateObject var viewModel: GIATrendingGIFsViewModel
     @State var showToast: Bool = false
+    
+    @ObservedResults(GIAFavouriteGIF.self) var favGifsList
     
     init() {
         self._viewModel = StateObject(wrappedValue: GIATrendingGIFsViewModel())
@@ -33,18 +36,27 @@ struct GIATrendingGifsView: View {
                 }
                 else {
                     List(0..<10, id: \.self) { index in
-                        GIAListItemView(gifURL: URL(string: "https://media.giphy.com/media/jHXYSO115NBLLyc9wY/giphy.gif")!)
-                            .frame(height: 200)
-                            .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
+                        GIAGIFView(
+                            gifIDValue: "69",
+                            gifURL: URL(string: "https://media.giphy.com/media/jHXYSO115NBLLyc9wY/giphy.gif")!,
+                            isLiked: false
+                        )
+                        .frame(height: 200)
+                        .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
                     }
                     .listStyle(PlainListStyle())
-                    .navigationTitle("Trending GIFs")
                 }
             }
+            .navigationTitle("Trending GIFs")
             .toolbar {
                 Button {
+                    // add to realmdb
+                    let favGif = GIAFavouriteGIF()
+                    favGif.gifIDValue = "69"
+                    favGif.gifURL = "https://media.giphy.com/media/jHXYSO115NBLLyc9wY/giphy.gif"
+                    $favGifsList.append(favGif)
                     // Show Search Gifs Sheet
-                    viewModel.showingSearchGIFView = true
+//                    viewModel.showingSearchGIFView = true
 //                    withAnimation {
 //                        showToast.toggle()
 //                    }
