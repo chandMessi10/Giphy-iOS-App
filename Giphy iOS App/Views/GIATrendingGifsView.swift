@@ -10,7 +10,6 @@ import RealmSwift
 import SimpleToast
 
 struct GIATrendingGifsView: View {
-    @State private var searchText: String = ""
     @StateObject var viewModel: GIATrendingGIFsViewModel
     @State var showToast: Bool = false
     @State var isGIFLiked: Bool = false
@@ -34,8 +33,7 @@ struct GIATrendingGifsView: View {
                     ProgressView("Loading...")
                 } else if !viewModel.errorMessage.isEmpty {
                     Text(viewModel.errorMessage)
-                }
-                else {
+                } else {
                     ScrollView {
                         ForEach(viewModel.trendingGifsList, id: \.id) { trendingGif in
                             GIAGIFView(
@@ -65,10 +63,7 @@ struct GIATrendingGifsView: View {
                         .tint(.secondary).font(.system(size: 18))
                 }
             }.sheet(isPresented: $viewModel.showingSearchGIFView) {
-                GIASearchGIFView(
-                    text: "",
-                    searchGIFViewPresented: $viewModel.showingSearchGIFView
-                )
+                GIASearchGIFView()
             }.refreshable {
                 viewModel.fetchTrendingGIFs()
             }.simpleToast(isPresented: $showToast, options: toastOptions) {

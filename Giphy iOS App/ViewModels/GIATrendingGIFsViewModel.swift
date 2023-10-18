@@ -20,7 +20,7 @@ class GIATrendingGIFsViewModel: ObservableObject {
     
     let trendingGifParameters: [String: Any] = [
         "api_key": "sX9lDEVuAg6AmqVxBEYtLgO0SlPmLM2I",
-        "limit": 5,
+        "limit": 15,
         "offset": 0,
         "rating": "g",
         "bundle": "messaging_non_clips"
