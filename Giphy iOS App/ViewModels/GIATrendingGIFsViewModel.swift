@@ -10,7 +10,7 @@ import Foundation
 class GIATrendingGIFsViewModel: ObservableObject {
     @Published var showingSearchGIFView = false
     @Published var isLoading = false
-    @Published var users: [User] = []
+    @Published var trendingGifsList: [GIAGIFDetail] = []
     @Published var errorMessage = ""
     
     init() {
@@ -18,15 +18,22 @@ class GIATrendingGIFsViewModel: ObservableObject {
         fetchTrendingGIFs()
     }
     
+    let trendingGifParameters: [String: Any] = [
+        "api_key": "sX9lDEVuAg6AmqVxBEYtLgO0SlPmLM2I",
+        "limit": 5,
+        "offset": 0,
+        "rating": "g",
+        "bundle": "messaging_non_clips"
+    ]
+    
     func fetchTrendingGIFs() {
         isLoading = true
-        NetworkManager.shared.request("https://jsonplaceholder.typicode.com/users", method: .get) { (result: Result<[User], Error>) in
+        NetworkManager.shared.request("https://api.giphy.com/v1/gifs/trending", method: .get, parameters: trendingGifParameters) { (result: Result<GIAGIFList, Error>) in
             DispatchQueue.main.async {
                 self.isLoading = false
                 switch result {
-                case .success(let fetchedUsers):
-                    print("fetched users: \(fetchedUsers)")
-                    self.users = fetchedUsers
+                case .success(let fetchedTrendingGifs):
+                    self.trendingGifsList = fetchedTrendingGifs.data
                 case .failure(let error):
                     self.errorMessage = "Error: \(error.localizedDescription)"
                 }

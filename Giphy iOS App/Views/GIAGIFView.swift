@@ -11,8 +11,8 @@ import RealmSwift
 
 struct GIAGIFView: View {
     let gifIDValue: String
-    let gifURL: URL // URL of the GIF image
-    var isLiked: Bool
+    let gifURL: URL
+    var onAction: (Bool) -> Void // Callback closure
     
     @ObservedResults(GIAFavouriteGIF.self) var favouriteGifs
     @Environment(\.realm) private var realm
@@ -43,6 +43,7 @@ struct GIAGIFView: View {
                     do {
                         try realm.write {
                             realm.delete(gifToDelete)
+                            onAction(false)
                         }
                     } catch {
                         print("Error deleting item: \(error)")
@@ -55,6 +56,7 @@ struct GIAGIFView: View {
                     do {
                         try realm.write {
                             realm.add(newFavGIF)
+                            onAction(true)
                         }
                     } catch {
                         print("Error adding item: \(error)")
@@ -73,7 +75,8 @@ struct GIAGIFView: View {
                     )
                 }
                 .padding(8) // Adjust the padding as needed
-                .offset(x: -2, y: 2) // Adjust the offset to position the heart icon as needed
+                .offset(x: -2, y: 2)
+                // Adjust the offset to position the heart icon as needed
             }
         }
     }
@@ -84,7 +87,7 @@ struct GridItemView_Previews: PreviewProvider {
         GIAGIFView(
             gifIDValue: "0",
             gifURL: URL(string: "https://media.giphy.com/media/jHXYSO115NBLLyc9wY/giphy.gif")!,
-            isLiked: true
+            onAction: {_ in }
         )
     }
 }

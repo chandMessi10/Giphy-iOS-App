@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC93357B2ADE6F6800B67E97 /* GIAGIFDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC93357A2ADE6F6800B67E97 /* GIAGIFDetail.swift */; };
+		EC93357D2ADE70B700B67E97 /* GIAGIFList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC93357C2ADE70B700B67E97 /* GIAGIFList.swift */; };
 		EC9640A22AD59E6600CB9716 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9640A12AD59E6600CB9716 /* NetworkManager.swift */; };
 		EC9640AA2AD5A45800CB9716 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EC9640A92AD5A45800CB9716 /* Alamofire */; };
 		EC9640AC2AD5A6C500CB9716 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9640AB2AD5A6C500CB9716 /* User.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC93357A2ADE6F6800B67E97 /* GIAGIFDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIAGIFDetail.swift; sourceTree = "<group>"; };
+		EC93357C2ADE70B700B67E97 /* GIAGIFList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIAGIFList.swift; sourceTree = "<group>"; };
 		EC9640A12AD59E6600CB9716 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EC9640AB2AD5A6C500CB9716 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EC9640AD2AD5A73900CB9716 /* GIASearchGIFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIASearchGIFView.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 		EC9640A52AD5A18B00CB9716 /* APIResponseTypes */ = {
 			isa = PBXGroup;
 			children = (
+				EC93357A2ADE6F6800B67E97 /* GIAGIFDetail.swift */,
+				EC93357C2ADE70B700B67E97 /* GIAGIFList.swift */,
 			);
 			path = APIResponseTypes;
 			sourceTree = "<group>";
@@ -274,7 +280,9 @@
 				EC9AF74F2AD3DC7F00D67FA2 /* GIATrendingGifsView.swift in Sources */,
 				EC9640AE2AD5A73900CB9716 /* GIASearchGIFView.swift in Sources */,
 				EC9640AC2AD5A6C500CB9716 /* User.swift in Sources */,
+				EC93357D2ADE70B700B67E97 /* GIAGIFList.swift in Sources */,
 				EC9AF7512AD3DC8A00D67FA2 /* GIAFavouriteGifsView.swift in Sources */,
+				EC93357B2ADE6F6800B67E97 /* GIAGIFDetail.swift in Sources */,
 				EC9640B32AD5C2A500CB9716 /* GIASearchViewViewModel.swift in Sources */,
 				EC9703EA2ADD19A700E6366F /* LottieView.swift in Sources */,
 				EC9703E32ADD154200E6366F /* GIAFavouriteGIF.swift in Sources */,

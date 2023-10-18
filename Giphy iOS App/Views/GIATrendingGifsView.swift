@@ -13,6 +13,7 @@ struct GIATrendingGifsView: View {
     @State private var searchText: String = ""
     @StateObject var viewModel: GIATrendingGIFsViewModel
     @State var showToast: Bool = false
+    @State var isGIFLiked: Bool = false
     
     @ObservedResults(GIAFavouriteGIF.self) var favGifsList
     
@@ -22,7 +23,7 @@ struct GIATrendingGifsView: View {
     
     private let toastOptions = SimpleToastOptions(
         alignment: .bottom,
-        hideAfter: 5,
+        hideAfter: 2,
         modifierType: .skew
     )
     
@@ -35,31 +36,30 @@ struct GIATrendingGifsView: View {
                     Text(viewModel.errorMessage)
                 }
                 else {
-                    List(0..<10, id: \.self) { index in
-                        GIAGIFView(
-                            gifIDValue: "69",
-                            gifURL: URL(string: "https://media.giphy.com/media/jHXYSO115NBLLyc9wY/giphy.gif")!,
-                            isLiked: false
-                        )
-                        .frame(height: 200)
-                        .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
+                    ScrollView {
+                        ForEach(viewModel.trendingGifsList, id: \.id) { trendingGif in
+                            GIAGIFView(
+                                gifIDValue: trendingGif.id,
+                                gifURL: URL(string: trendingGif.images.original.url)!,
+                                onAction: { likeValue in
+                                    isGIFLiked = likeValue
+                                    withAnimation {
+                                        showToast.toggle()
+                                    }
+                                }
+                            )
+                            .frame(height: 200)
+                            .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
+                        }
+                        .listStyle(PlainListStyle())
                     }
-                    .listStyle(PlainListStyle())
                 }
             }
             .navigationTitle("Trending GIFs")
             .toolbar {
                 Button {
-                    // add to realmdb
-                    let favGif = GIAFavouriteGIF()
-                    favGif.gifIDValue = "69"
-                    favGif.gifURL = "https://media.giphy.com/media/jHXYSO115NBLLyc9wY/giphy.gif"
-                    $favGifsList.append(favGif)
                     // Show Search Gifs Sheet
-//                    viewModel.showingSearchGIFView = true
-//                    withAnimation {
-//                        showToast.toggle()
-//                    }
+                    viewModel.showingSearchGIFView = true
                 } label: {
                     Image(systemName: "magnifyingglass")
                         .tint(.secondary).font(.system(size: 18))
@@ -72,13 +72,17 @@ struct GIATrendingGifsView: View {
             }.refreshable {
                 viewModel.fetchTrendingGIFs()
             }.simpleToast(isPresented: $showToast, options: toastOptions) {
-                Label("GIF favourited", systemImage: "heart.fill")
-                .padding()
-                .background(Color.white)
-                .foregroundColor(Color.gray)
-                .cornerRadius(10)
-                .padding(.top)
+                Label(
+                    isGIFLiked ? "GIF favourited" : "GIF unfavourited",
+                    systemImage: isGIFLiked ? "heart.fill" : "heart"
+                ).padding()
+                    .background(Color.white)
+                    .foregroundColor(Color.gray)
+                    .cornerRadius(10)
+                    .padding(.top)
             }
+            .padding(.leading)
+            .padding(.trailing)
         }
     }
 }
