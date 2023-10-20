@@ -26,6 +26,7 @@
 		EC9AF74F2AD3DC7F00D67FA2 /* GIATrendingGifsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AF74E2AD3DC7F00D67FA2 /* GIATrendingGifsView.swift */; };
 		EC9AF7512AD3DC8A00D67FA2 /* GIAFavouriteGifsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9AF7502AD3DC8A00D67FA2 /* GIAFavouriteGifsView.swift */; };
 		EC9BA6BD2AD530F100299988 /* GIAGIFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9BA6BC2AD530F100299988 /* GIAGIFView.swift */; };
+		ECA218E82AE2D9B9004225DE /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA218E62AE2D8DE004225DE /* Launch Screen.storyboard */; };
 		ECA87DC92AD7209E0087A8D2 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA87DC82AD7209E0087A8D2 /* OnboardView.swift */; };
 		ECBF56C42AD452C900A65CF1 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = ECBF56C32AD452C900A65CF1 /* URLImage */; };
 		ECBF56C62AD452C900A65CF1 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = ECBF56C52AD452C900A65CF1 /* URLImageStore */; };
@@ -55,6 +56,8 @@
 		EC9AF74E2AD3DC7F00D67FA2 /* GIATrendingGifsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIATrendingGifsView.swift; sourceTree = "<group>"; };
 		EC9AF7502AD3DC8A00D67FA2 /* GIAFavouriteGifsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIAFavouriteGifsView.swift; sourceTree = "<group>"; };
 		EC9BA6BC2AD530F100299988 /* GIAGIFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIAGIFView.swift; sourceTree = "<group>"; };
+		ECA218E52AE2CA5C004225DE /* Giphy-iOS-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Giphy-iOS-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		ECA218E62AE2D8DE004225DE /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		ECA87DC82AD7209E0087A8D2 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +144,7 @@
 		EC9AF73D2AD3DB5900D67FA2 /* Giphy iOS App */ = {
 			isa = PBXGroup;
 			children = (
+				ECA218E52AE2CA5C004225DE /* Giphy-iOS-App-Info.plist */,
 				EC9640AF2AD5B93300CB9716 /* ViewModels */,
 				EC9640A32AD59ED000CB9716 /* Models */,
 				EC9640A02AD59E5600CB9716 /* APIClient */,
@@ -179,6 +183,7 @@
 				EC9AF7422AD3DB5A00D67FA2 /* Assets.xcassets */,
 				EC9AF73E2AD3DB5900D67FA2 /* Giphy_iOS_AppApp.swift */,
 				EC9703E92ADD19A700E6366F /* LottieView.swift */,
+				ECA218E62AE2D8DE004225DE /* Launch Screen.storyboard */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 			files = (
 				EC9703E82ADD196E00E6366F /* empty_fav_gifs.json in Resources */,
 				EC9AF7462AD3DB5A00D67FA2 /* Preview Assets.xcassets in Resources */,
+				ECA218E82AE2D9B9004225DE /* Launch Screen.storyboard in Resources */,
 				EC9AF7432AD3DB5A00D67FA2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,9 +431,10 @@
 				DEVELOPMENT_TEAM = NX4HC3DZ28;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Giphy-iOS-App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -454,9 +461,10 @@
 				DEVELOPMENT_TEAM = NX4HC3DZ28;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Giphy-iOS-App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
