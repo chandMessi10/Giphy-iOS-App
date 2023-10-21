@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC8B1B7D2AE43F89002B70DE /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B1B7C2AE43F89002B70DE /* NetworkMonitor.swift */; };
+		EC8B1B7F2AE44AA2002B70DE /* GIANoNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B1B7E2AE44AA2002B70DE /* GIANoNetworkView.swift */; };
 		EC93357B2ADE6F6800B67E97 /* GIAGIFDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC93357A2ADE6F6800B67E97 /* GIAGIFDetail.swift */; };
 		EC93357D2ADE70B700B67E97 /* GIAGIFList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC93357C2ADE70B700B67E97 /* GIAGIFList.swift */; };
 		EC9640A22AD59E6600CB9716 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9640A12AD59E6600CB9716 /* NetworkManager.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC8B1B7C2AE43F89002B70DE /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		EC8B1B7E2AE44AA2002B70DE /* GIANoNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIANoNetworkView.swift; sourceTree = "<group>"; };
 		EC93357A2ADE6F6800B67E97 /* GIAGIFDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIAGIFDetail.swift; sourceTree = "<group>"; };
 		EC93357C2ADE70B700B67E97 /* GIAGIFList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIAGIFList.swift; sourceTree = "<group>"; };
 		EC9640A12AD59E6600CB9716 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				EC9640A12AD59E6600CB9716 /* NetworkManager.swift */,
+				EC8B1B7C2AE43F89002B70DE /* NetworkMonitor.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 				EC9AF73E2AD3DB5900D67FA2 /* Giphy_iOS_AppApp.swift */,
 				EC9703E92ADD19A700E6366F /* LottieView.swift */,
 				ECA218E62AE2D8DE004225DE /* Launch Screen.storyboard */,
+				EC8B1B7E2AE44AA2002B70DE /* GIANoNetworkView.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC9640A22AD59E6600CB9716 /* NetworkManager.swift in Sources */,
+				EC8B1B7D2AE43F89002B70DE /* NetworkMonitor.swift in Sources */,
 				EC9AF7412AD3DB5900D67FA2 /* GIAHomeTabView.swift in Sources */,
 				EC9AF73F2AD3DB5900D67FA2 /* Giphy_iOS_AppApp.swift in Sources */,
 				EC9AF74F2AD3DC7F00D67FA2 /* GIATrendingGifsView.swift in Sources */,
@@ -289,6 +296,7 @@
 				EC93357D2ADE70B700B67E97 /* GIAGIFList.swift in Sources */,
 				EC9AF7512AD3DC8A00D67FA2 /* GIAFavouriteGifsView.swift in Sources */,
 				EC93357B2ADE6F6800B67E97 /* GIAGIFDetail.swift in Sources */,
+				EC8B1B7F2AE44AA2002B70DE /* GIANoNetworkView.swift in Sources */,
 				EC9640B32AD5C2A500CB9716 /* GIASearchViewViewModel.swift in Sources */,
 				EC9703EA2ADD19A700E6366F /* LottieView.swift in Sources */,
 				EC9703E32ADD154200E6366F /* GIAFavouriteGIF.swift in Sources */,
