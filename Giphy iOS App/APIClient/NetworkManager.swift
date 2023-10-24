@@ -34,7 +34,6 @@ class NetworkManager {
             case .success(let data):
                 completion(.success(data))
             case .failure(let error):
-                print("error code check : \(String(describing: error.responseCode))")
                 completion(.failure(error))
             }
         }

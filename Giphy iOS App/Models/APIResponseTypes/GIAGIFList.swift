@@ -9,4 +9,11 @@ import SwiftUI
 
 struct GIAGIFList: Decodable {
     let data: [GIAGIFDetail]
+    let pagination: GIFPagination
+}
+
+struct GIFPagination: Decodable {
+    let total_count: Int
+    let count: Int
+    let offset: Int
 }

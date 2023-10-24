@@ -8,6 +8,7 @@
 import SwiftUI
 import RealmSwift
 import SimpleToast
+import SwiftUIInfiniteList
 
 struct GIATrendingGifsView: View {
     @StateObject var viewModel: GIATrendingGIFsViewModel
@@ -34,23 +35,33 @@ struct GIATrendingGifsView: View {
                 } else if !viewModel.errorMessage.isEmpty {
                     Text(viewModel.errorMessage)
                 } else {
-                    ScrollView {
-                        ForEach(viewModel.trendingGifsList, id: \.id) { trendingGif in
-                            GIAGIFView(
-                                gifIDValue: trendingGif.id,
-                                gifURL: URL(string: trendingGif.images.original.url)!,
-                                onAction: { likeValue in
-                                    isGIFLiked = likeValue
-                                    withAnimation {
-                                        showToast.toggle()
+                        List {
+                            ForEach(viewModel.trendingGifsList, id: \.id) { trendingGif in
+                                GIAGIFView(
+                                    gifIDValue: trendingGif.id,
+                                    gifURL: URL(string: trendingGif.images.original.url)!,
+                                    onAction: { likeValue in
+                                        isGIFLiked = likeValue
+                                        withAnimation {
+                                            showToast.toggle()
+                                        }
                                     }
+                                )
+                                .frame(height: 200)
+                                .listRowSeparator(.hidden)
+                            }
+                            .listStyle(PlainListStyle())
+                            
+                            if viewModel.offset < viewModel.totalGIFsCount {
+                                if !viewModel.isLoading {
+                                    ProgressView().frame(maxWidth: .infinity).padding().onAppear {
+    //                                        viewModel.loadNextPage()
+                                        }
+                                        .listRowSeparator(.hidden)
                                 }
-                            )
-                            .frame(height: 200)
-                            .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
+                            }
                         }
                         .listStyle(PlainListStyle())
-                    }
                 }
             }
             .navigationTitle("Trending GIFs")
@@ -64,9 +75,12 @@ struct GIATrendingGifsView: View {
                 }
             }.sheet(isPresented: $viewModel.showingSearchGIFView) {
                 GIASearchGIFView()
-            }.refreshable {
-                viewModel.fetchTrendingGIFs()
-            }.simpleToast(isPresented: $showToast, options: toastOptions) {
+            }
+            .refreshable {
+                viewModel.offset = 0
+                viewModel.fetchTrendingGIFs(isLoadingMore: false)
+            }
+            .simpleToast(isPresented: $showToast, options: toastOptions) {
                 Label(
                     isGIFLiked ? "GIF favourited" : "GIF unfavourited",
                     systemImage: isGIFLiked ? "heart.fill" : "heart"
@@ -76,9 +90,13 @@ struct GIATrendingGifsView: View {
                     .cornerRadius(10)
                     .padding(.top)
             }
-            .padding(.leading)
-            .padding(.trailing)
+//            .padding(.leading)
+//            .padding(.trailing)
         }
+    }
+    
+    func loadMoreData() {
+        
     }
 }
 

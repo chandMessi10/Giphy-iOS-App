@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC02380A2AE6F5610055DDA3 /* SwiftUIInfiniteList in Frameworks */ = {isa = PBXBuildFile; productRef = EC0238092AE6F5610055DDA3 /* SwiftUIInfiniteList */; };
 		EC8B1B7D2AE43F89002B70DE /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B1B7C2AE43F89002B70DE /* NetworkMonitor.swift */; };
 		EC8B1B7F2AE44AA2002B70DE /* GIANoNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8B1B7E2AE44AA2002B70DE /* GIANoNetworkView.swift */; };
 		EC93357B2ADE6F6800B67E97 /* GIAGIFDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC93357A2ADE6F6800B67E97 /* GIAGIFDetail.swift */; };
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC02380A2AE6F5610055DDA3 /* SwiftUIInfiniteList in Frameworks */,
 				ECE5CEF12AD9CAF8008C6DB2 /* RealmSwift in Frameworks */,
 				ECE5CEEF2AD9CAF8008C6DB2 /* Realm in Frameworks */,
 				EC9703E62ADD187D00E6366F /* Lottie in Frameworks */,
@@ -220,6 +222,7 @@
 				ECE5CEEE2AD9CAF8008C6DB2 /* Realm */,
 				ECE5CEF02AD9CAF8008C6DB2 /* RealmSwift */,
 				EC9703E52ADD187D00E6366F /* Lottie */,
+				EC0238092AE6F5610055DDA3 /* SwiftUIInfiniteList */,
 			);
 			productName = "Giphy iOS App";
 			productReference = EC9AF73B2AD3DB5900D67FA2 /* Giphy iOS App.app */;
@@ -257,6 +260,7 @@
 				ECE5CEEA2AD99B38008C6DB2 /* XCRemoteSwiftPackageReference "SimpleToast" */,
 				ECE5CEED2AD9CAF8008C6DB2 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				EC9703E42ADD187D00E6366F /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				EC0238082AE6F5610055DDA3 /* XCRemoteSwiftPackageReference "swiftui-infinite-list" */,
 			);
 			productRefGroup = EC9AF73C2AD3DB5900D67FA2 /* Products */;
 			projectDirPath = "";
@@ -512,6 +516,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EC0238082AE6F5610055DDA3 /* XCRemoteSwiftPackageReference "swiftui-infinite-list" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/globulus/swiftui-infinite-list.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		EC9640A82AD5A45800CB9716 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -571,6 +583,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EC0238092AE6F5610055DDA3 /* SwiftUIInfiniteList */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC0238082AE6F5610055DDA3 /* XCRemoteSwiftPackageReference "swiftui-infinite-list" */;
+			productName = SwiftUIInfiniteList;
+		};
 		EC9640A92AD5A45800CB9716 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EC9640A82AD5A45800CB9716 /* XCRemoteSwiftPackageReference "Alamofire" */;
