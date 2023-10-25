@@ -55,7 +55,7 @@ struct GIATrendingGifsView: View {
                             if viewModel.offset < viewModel.totalGIFsCount {
                                 if !viewModel.isLoading {
                                     ProgressView().frame(maxWidth: .infinity).padding().onAppear {
-    //                                        viewModel.loadNextPage()
+                                            viewModel.loadNextPage()
                                         }
                                         .listRowSeparator(.hidden)
                                 }
@@ -77,7 +77,7 @@ struct GIATrendingGifsView: View {
                 GIASearchGIFView()
             }
             .refreshable {
-                viewModel.offset = 0
+                viewModel.clearVariables()
                 viewModel.fetchTrendingGIFs(isLoadingMore: false)
             }
             .simpleToast(isPresented: $showToast, options: toastOptions) {

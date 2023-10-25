@@ -52,16 +52,17 @@ struct GIAFavouriteGifsView: View {
                         .padding(16)
                     }
                 }
-            }.navigationTitle("Favourite GIFs")
-                .simpleToast(isPresented: $showToast, options: toastOptions) {
-                    Label(
-                        isGIFLiked ? "GIF favourited" : "GIF unfavourited",
-                        systemImage: isGIFLiked ? "heart.fill" : "heart"
-                    ).padding()
-                        .background(Color.gray)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(10)
-                }
+            }
+            .navigationTitle("Favourite GIFs")
+            .simpleToast(isPresented: $showToast, options: toastOptions) {
+                Label(
+                    isGIFLiked ? "GIF favourited" : "GIF unfavourited",
+                    systemImage: isGIFLiked ? "heart.fill" : "heart"
+                ).padding()
+                    .background(Color.gray)
+                    .foregroundColor(Color.white)
+                    .cornerRadius(10)
+            }
         }
     }
 }

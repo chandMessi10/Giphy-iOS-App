@@ -56,7 +56,9 @@ struct GIASearchGIFView: View {
                     .cornerRadius(8)
                     .onChange(of: text, initial: false) {
                         if (!text.isEmpty) {
-                            viewModel.fetchSearchedGIFs(queryValue: text)
+                            viewModel.fetchSearchedGIFs(queryValue: text, isLoadingMore: false)
+                        } else {
+                            viewModel.clearVariables()
                         }
                     }
                 
@@ -64,6 +66,7 @@ struct GIASearchGIFView: View {
                     Button(action: {
                         // Action for the suffix button
                         text = ""
+                        viewModel.clearVariables()
                     }) {
                         Image(systemName: "xmark.circle")
                             .foregroundColor(.black)
@@ -80,7 +83,7 @@ struct GIASearchGIFView: View {
                 } else if !viewModel.errorMessage.isEmpty {
                     Text(viewModel.errorMessage)
                 } else {
-                    ScrollView {
+                    List {
                         ForEach(viewModel.searchGifsList, id: \.id) { searchedGif in
                             GIAGIFView(
                                 gifIDValue: searchedGif.id,
@@ -93,12 +96,20 @@ struct GIASearchGIFView: View {
                                 }
                             )
                             .frame(height: 200)
-                            .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16))
+                            .listRowSeparator(.hidden)
                         }
                         .listStyle(PlainListStyle())
+                        
+                        if viewModel.offset < viewModel.totalGIFsCount {
+                            if !viewModel.isLoading {
+                                ProgressView().frame(maxWidth: .infinity).padding().onAppear {
+                                    viewModel.loadNextPage(queryValue: text)
+                                }
+                                .listRowSeparator(.hidden)
+                            }
+                        }
                     }
-                    .padding(.leading)
-                    .padding(.trailing)
+                    .listStyle(PlainListStyle())
                 }
             }
         }.simpleToast(isPresented: $showToast, options: toastOptions) {

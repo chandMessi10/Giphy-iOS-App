@@ -23,8 +23,15 @@ class GIATrendingGIFsViewModel: ObservableObject {
         fetchTrendingGIFs(isLoadingMore: false)
     }
     
+    func clearVariables() {
+        self.trendingGifsList = []
+        self.isFetchingNextPage = false
+        self.offset = 0
+        self.totalGIFsCount = 0
+        self.errorMessage = ""
+    }
+    
     func fetchTrendingGIFs(isLoadingMore: Bool) {
-//        isLoading = true
         if (!isLoadingMore) {
             isLoading = true
         } 
@@ -41,7 +48,6 @@ class GIATrendingGIFsViewModel: ObservableObject {
         
         NetworkManager.shared.request("https://api.giphy.com/v1/gifs/trending", method: .get, parameters: trendingGifParameters) { (result: Result<GIAGIFList, Error>) in
             DispatchQueue.main.async {
-//                self.isLoading = false
                 if (!isLoadingMore) {
                     self.isLoading = false
                 } 
